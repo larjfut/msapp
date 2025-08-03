@@ -144,15 +144,6 @@
           "Shadow": "varShadow",
           "Tooltip": "View History",
           "OnSelect": "Navigate(HistoryScreen, ScreenTransition.Fade)"
-        },
-        {
-          "Type": "IconButton",
-          "Name": "icnSettings",
-          "IconName": "Settings",
-          "Fill": "Transparent",
-          "Shadow": "varShadow",
-          "Tooltip": "Settings",
-          "OnSelect": "Navigate(SettingsScreen, ScreenTransition.Fade)"
         }
       ]
     },
@@ -177,10 +168,8 @@
       "Shadow": "varShadow",
       "Spacing": "varGrid * 2",
       "Controls": [
-        { "Type": "IconButton", "Name": "ftHome",    "IconName": "Home",     "Active": false, "OnSelect": "Navigate(DashboardScreen, None)" },
         { "Type": "IconButton", "Name": "ftUpload",  "IconName": "Upload",   "Active": true,  "OnSelect": "Navigate(UploadScreen, None)" },
-        { "Type": "IconButton", "Name": "ftHistory", "IconName": "List",     "Active": false, "OnSelect": "Navigate(HistoryScreen, None)" },
-        { "Type": "IconButton", "Name": "ftSettings","IconName": "Settings",  "Active": false, "OnSelect": "Navigate(SettingsScreen, None)" }
+        { "Type": "IconButton", "Name": "ftHistory", "IconName": "List",     "Active": false, "OnSelect": "Navigate(HistoryScreen, None)" }
       ]
     }
   ]

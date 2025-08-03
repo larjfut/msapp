@@ -158,9 +158,9 @@
     },
     "connectionReferences": {
         "SharePoint": {
-            "connectionInstanceId": "16f31928182448edade8042eb1c07cb3",
+            "connectionInstanceId": "<SHAREPOINT_CONNECTION_ID>",
             "connection": {
-                "id": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline/connections/16f31928182448edade8042eb1c07cb3"
+                "id": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline/connections/<SHAREPOINT_CONNECTION_ID>"
             },
             "api": {
                 "name": "shared_sharepointonline",
@@ -168,7 +168,7 @@
                 "iconUri": "https://connectoricons.blob.core.windows.net/releases/v1.0.1518/connectoricon.png"
             },
             "dataSources": [
-                "https://texascouncil.sharepoint.com/sites/FinanceHub/Lists/Receipts"
+                "<SHAREPOINT_SITE_URL>"
             ]
         }
     },

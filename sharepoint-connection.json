@@ -1,0 +1,14 @@
+{
+  "connectionId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline/connections/<SHAREPOINT_CONNECTION_ID>",
+  "displayName": "SharePoint",
+  "environment": "<POWERAPPS_ENVIRONMENT_ID>",
+  "api": {
+    "name": "shared_sharepointonline",
+    "displayName": "SharePoint",
+    "iconUri": "https://connectoricons.blob.core.windows.net/releases/v1.0.1518/connectoricon.png"
+  },
+  "dataSources": [
+    "<SHAREPOINT_SITE_URL>"
+  ],
+  "connectionInstanceId": "<SHAREPOINT_CONNECTION_ID>"
+}

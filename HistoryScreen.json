@@ -1,0 +1,85 @@
+HistoryScreen.msapp.json
+{
+  "Screen": "HistoryScreen",
+  "Properties": {
+    "Name": "HistoryScreen",
+    "Fill": "varNeutralBg"
+  },
+  "Controls": [
+    {
+      "Type": "Container",
+      "Name": "cntHistoryMain",
+      "X": "varGrid * 2",
+      "Y": "varGrid * 2",
+      "Width": "Parent.TemplateWidth - (varGrid * 4)",
+      "Height": "Parent.TemplateHeight - (varGrid * 4)",
+      "Padding": "varGrid * 2",
+      "Layout": "Vertical",
+      "Spacing": "varGrid * 2"
+    },
+    {
+      "Type": "Label",
+      "Name": "lblHistoryTitle",
+      "Parent": "cntHistoryMain",
+      "Text": "Upload History",
+      "Font": "Poppins Bold",
+      "FontSize": 24,
+      "Color": "varTextPrimary",
+      "MarginBottom": "varGrid"
+    },
+    {
+      "Type": "Gallery",
+      "Name": "galHistory",
+      "Parent": "cntHistoryMain",
+      "Items": "Sort(Receipts, CreatedTime, Descending)",
+      "Layout": "Vertical",
+      "TemplateSize": 80,
+      "ShowScrollbar": true,
+      "Controls": [
+        {
+          "Type": "Image",
+          "Name": "imgItem",
+          "TemplateFill": "#FFFFFF",
+          "TemplateBorderColor": "varSecondaryColor",
+          "TemplateBorderThickness": 1,
+          "TemplateShadow": "varShadow",
+          "Width": 60,
+          "Height": 60,
+          "Align": "Left",
+          "Image": "ThisItem.ReceiptImage"
+        },
+        {
+          "Type": "Label",
+          "Name": "lblItemName",
+          "Text": "ThisItem.Title",
+          "Font": "Lora Regular",
+          "FontSize": 14,
+          "Color": "varTextPrimary",
+          "Width": "Parent.Width - 80",
+          "X": 80,
+          "Y": 8
+        },
+        {
+          "Type": "Label",
+          "Name": "lblItemDate",
+          "Text": "Text(ThisItem.CreatedTime, \"[$-en-US]mmmm d, yyyy hh:mm tt\")",
+          "Font": "Lora Regular",
+          "FontSize": 12,
+          "Color": "varTextSecondary",
+          "Width": "Parent.Width - 80",
+          "X": 80,
+          "Y": 32
+        },
+        {
+          "Type": "Icon",
+          "Name": "icnChevron",
+          "IconName": "ChevronRight",
+          "Size": 24,
+          "Color": "varSecondaryColor",
+          "Align": "Right",
+          "OnSelect": "Navigate(ConfirmationScreen, ScreenTransition.None); Set(varPhoto, ThisItem.ReceiptImage); Set(varFileName, ThisItem.Title); Set(varUploadTime, ThisItem.CreatedTime)"
+        }
+      ]
+    }
+  ]
+}

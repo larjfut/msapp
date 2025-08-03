@@ -1,0 +1,96 @@
+// ConfirmationScreen.msapp.json
+{
+  "Screen": "ConfirmationScreen",
+  "Properties": {
+    "Name": "ConfirmationScreen",
+    "Fill": "varNeutralBg"
+  },
+  "Controls": [
+    {
+      "Type": "Container",
+      "Name": "cntConfirmMain",
+      "X": "varGrid * 2",
+      "Y": "varGrid * 2",
+      "Width": "Parent.TemplateWidth - (varGrid * 4)",
+      "Height": "Parent.TemplateHeight - (varGrid * 4)",
+      "Padding": "varGrid * 2",
+      "Layout": "Vertical",
+      "Spacing": "varGrid * 2"
+    },
+    {
+      "Type": "Icon",
+      "Name": "icnSuccess",
+      "Parent": "cntConfirmMain",
+      "IconName": "CheckCircle",
+      "Size": 48,
+      "Color": "varAccentColor",
+      "Align": "Center"
+    },
+    {
+      "Type": "Label",
+      "Name": "lblSuccess",
+      "Parent": "cntConfirmMain",
+      "Text": "Receipt Uploaded!",
+      "Font": "Poppins Bold",
+      "FontSize": 20,
+      "Color": "varTextPrimary",
+      "Align": "Center"
+    },
+    {
+      "Type": "Image",
+      "Name": "imgThumb",
+      "Parent": "cntConfirmMain",
+      "Image": "varPhoto",
+      "Width": 150,
+      "Height": 150,
+      "BorderColor": "varSecondaryColor",
+      "BorderThickness": 1,
+      "Shadow": "varShadow",
+      "Align": "Center"
+    },
+    {
+      "Type": "Label",
+      "Name": "lblThumbName",
+      "Parent": "cntConfirmMain",
+      "Text": "varFileName",
+      "Font": "Lora Italic",
+      "FontSize": 14,
+      "Color": "varTextSecondary",
+      "Align": "Center"
+    },
+    {
+      "Type": "Label",
+      "Name": "lblTimestamp",
+      "Parent": "cntConfirmMain",
+      "Text": "Text(varUploadTime, \"[$-en-US]mmmm d, yyyy h:mm tt\")",
+      "Font": "Lora Regular",
+      "FontSize": 12,
+      "Color": "varTextSecondary",
+      "Align": "Center"
+    },
+    {
+      "Type": "HorizontalContainer",
+      "Name": "cntConfirmActions",
+      "Parent": "cntConfirmMain",
+      "Spacing": "varGrid",
+      "Controls": [
+        {
+          "Type": "Button",
+          "Name": "btnUploadMore",
+          "Text": "Upload Another",
+          "Fill": "varPrimaryColor",
+          "Color": "#FFFFFF",
+          "OnSelect": "Navigate(UploadScreen, ScreenTransition.Fade)"
+        },
+        {
+          "Type": "Button",
+          "Name": "btnViewHistory",
+          "Text": "View History",
+          "Fill": "Transparent",
+          "Color": "varSecondaryColor",
+          "OnSelect": "Navigate(HistoryScreen, ScreenTransition.Fade)"
+        }
+      ]
+    }
+  ]
+}

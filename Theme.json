@@ -1,0 +1,44 @@
+{
+  "Screen": "Theme",
+  "Controls": [
+    { "Name": "varPrimaryColor",     "Default": "#F16667" },
+    { "Name": "varSecondaryColor",   "Default": "#5B3653" },
+    { "Name": "varAccentColor",      "Default": "#43B0F1" },
+    { "Name": "varNeutralBg",        "Default": "#F9F7F5" },
+    { "Name": "varTextPrimary",      "Default": "#333333" },
+    { "Name": "varTextSecondary",    "Default": "#666666" },
+    { "Name": "varShadow",           "Default": "0px 2px 8px rgba(0,0,0,0.1)" },
+    { "Name": "varGrid",             "Default": 8 },
+
+    // Typography Tokens
+    { "Name": "varFontHeading",      "Default": "Poppins Bold" },
+    { "Name": "varFontBody",         "Default": "Lora Regular" },
+    { "Name": "varFontItalic",       "Default": "Lora Italic" },
+    { "Name": "varFontXL",           "Default": 24 },
+    { "Name": "varFontLG",           "Default": 18 },
+    { "Name": "varFontMD",           "Default": 16 },
+    { "Name": "varFontSM",           "Default": 14 },
+
+    // Corner Radii and Elevation
+    { "Name": "varRadiusSM",         "Default": 4 },
+    { "Name": "varRadiusMD",         "Default": 8 },
+    { "Name": "varRadiusLG",         "Default": 16 },
+    { "Name": "varElevationLow",     "Default": "0px 1px 3px rgba(0,0,0,0.08)" },
+    { "Name": "varElevationHigh",    "Default": "0px 4px 12px rgba(0,0,0,0.15)" },
+
+    // Status & Feedback Colors
+    { "Name": "varErrorColor",       "Default": "#D64545" },
+    { "Name": "varSuccessColor",     "Default": "#28A745" },
+    { "Name": "varWarningColor",     "Default": "#FFC107" },
+
+    // Icon & Control Sizing
+    { "Name": "varIconSM",           "Default": 16 },
+    { "Name": "varIconMD",           "Default": 24 },
+    { "Name": "varIconLG",           "Default": 32 },
+    { "Name": "varBtnHeight",        "Default": 48 },
+
+    // Gradients & Overlays
+    { "Name": "varGradientBlush",    "Default": "linear-gradient(#F9ECEB, #FDF1F7)" },
+    { "Name": "varOverlayPattern",   "Default": "url('/Assets/Patterns/Halftone.svg')" }
+  ]
+}

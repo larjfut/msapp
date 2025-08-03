@@ -1,0 +1,187 @@
+// UploadScreen.msapp.json
+{
+  "Screen": "UploadScreen",
+  "Properties": {
+    "Name": "UploadScreen",
+    "Fill": "varNeutralBg"
+  },
+  "Controls": [
+    {
+      "Type": "Container",
+      "Name": "cntMain",
+      "X": "varGrid * 2",
+      "Y": "varGrid * 2",
+      "Width": "Parent.TemplateWidth - (varGrid * 4)",
+      "Height": "Parent.TemplateHeight - (varGrid * 4)",
+      "Padding": "varGrid * 2",
+      "Layout": "Vertical",
+      "Spacing": "varGrid * 2"
+    },
+    {
+      "Type": "Image",
+      "Name": "imgTexas",
+      "Parent": "cntMain",
+      "Width": 32,
+      "Height": 32,
+      "Image": "Texas_Icon",
+      "Shadow": "varShadow",
+      "Tooltip": "Texas Icon"
+    },
+    {
+      "Type": "Image",
+      "Name": "imgLogo",
+      "Parent": "cntMain",
+      "Width": 48,
+      "Height": 48,
+      "Image": "TCFV_Logo",
+      "Shadow": "varShadow",
+      "Tooltip": "TCFV Logo"
+    },
+    {
+      "Type": "Label",
+      "Name": "lblTitle",
+      "Parent": "cntMain",
+      "Text": "Upload File or Photo",
+      "Font": "Poppins Bold",
+      "FontSize": 24,
+      "Color": "varTextPrimary"
+    },
+    {
+      "Type": "Label",
+      "Name": "lblInstructions",
+      "Parent": "cntMain",
+      "Text": "Select a file or take a photo below",
+      "Font": "Lora Regular",
+      "FontSize": 16,
+      "Color": "varTextSecondary"
+    },
+    {
+      "Type": "Image",
+      "Name": "imgPreview",
+      "Parent": "cntMain",
+      "Width": "Parent.Width",
+      "Height": 200,
+      "Fill": "#FFFFFF",
+      "BorderColor": "varSecondaryColor",
+      "BorderThickness": 1,
+      "Shadow": "varShadow",
+      "Image": "varPhoto",
+      "Visible": "!IsBlank(varPhoto)"
+    },
+    {
+      "Type": "HorizontalContainer",
+      "Name": "cntActions",
+      "Parent": "cntMain",
+      "Spacing": "varGrid",
+      "Align": "Center",
+      "Controls": [
+        {
+          "Type": "Camera",
+          "Name": "camPhoto",
+          "Width": 64,
+          "Height": 64,
+          "OnSelect": "Set(varPhoto, camPhoto.Photo)",
+          "Icon": "Icons/Camera.svg",
+          "Shadow": "varShadow",
+          "Tooltip": "Take Photo"
+        },
+        {
+          "Type": "Button",
+          "Name": "btnChooseFile",
+          "Text": "Choose File",
+          "Icon": "Icons/Upload.svg",
+          "IconPosition": "Left",
+          "Fill": "Transparent",
+          "Color": "varSecondaryColor",
+          "Shadow": "varShadow",
+          "OnSelect": "Select(addPicture1)"
+        }
+      ]
+    },
+    {
+      "Type": "Label",
+      "Name": "lblFileName",
+      "Parent": "cntMain",
+      "Text": "varFileName",
+      "Font": "Lora Italic",
+      "FontSize": 14,
+      "Color": "varTextSecondary",
+      "Visible": "!IsBlank(varFileName)"
+    },
+    {
+      "Type": "Button",
+      "Name": "btnSubmit",
+      "Parent": "cntMain",
+      "Text": "Submit",
+      "Fill": "varPrimaryColor",
+      "Color": "#FFFFFF",
+      "BorderRadius": "2xl",
+      "Shadow": "varShadow",
+      "OnSelect": "If(!IsBlank(varPhoto), Patch('Receipts', Defaults('Receipts'), { Title: lblFileName.Text, ReceiptImage: varPhoto, CreatedTime: Now() }), Set(lblError.Visible, true))"
+    },
+    {
+      "Type": "HorizontalContainer",
+      "Name": "cntQuickActions",
+      "Parent": "cntMain",
+      "Align": "Center",
+      "Spacing": "varGrid * 2",
+      "Controls": [
+        {
+          "Type": "IconButton",
+          "Name": "icnUploadNew",
+          "IconName": "Camera",
+          "Fill": "varPrimaryColor",
+          "Shadow": "varShadow",
+          "Tooltip": "Upload New",
+          "OnSelect": "Navigate(UploadScreen, ScreenTransition.None)"
+        },
+        {
+          "Type": "IconButton",
+          "Name": "icnViewHistory",
+          "IconName": "List",
+          "Fill": "Transparent",
+          "BorderColor": "varSecondaryColor",
+          "Shadow": "varShadow",
+          "Tooltip": "View History",
+          "OnSelect": "Navigate(HistoryScreen, ScreenTransition.Fade)"
+        },
+        {
+          "Type": "IconButton",
+          "Name": "icnSettings",
+          "IconName": "Settings",
+          "Fill": "Transparent",
+          "Shadow": "varShadow",
+          "Tooltip": "Settings",
+          "OnSelect": "Navigate(SettingsScreen, ScreenTransition.Fade)"
+        }
+      ]
+    },
+    {
+      "Type": "Label",
+      "Name": "lblError",
+      "Parent": "cntMain",
+      "Text": "Please select or capture a receipt first.",
+      "Font": "Lora Regular",
+      "FontSize": 14,
+      "Color": "varPrimaryColor",
+      "Visible": false
+    }
+  ],
+  "Footer": [
+    {
+      "Type": "HorizontalContainer",
+      "Name": "cntFooterQuick",
+      "Position": "Bottom",
+      "Height": 56,
+      "Fill": "#FFFFFF",
+      "Shadow": "varShadow",
+      "Spacing": "varGrid * 2",
+      "Controls": [
+        { "Type": "IconButton", "Name": "ftHome",    "IconName": "Home",     "Active": false, "OnSelect": "Navigate(DashboardScreen, None)" },
+        { "Type": "IconButton", "Name": "ftUpload",  "IconName": "Upload",   "Active": true,  "OnSelect": "Navigate(UploadScreen, None)" },
+        { "Type": "IconButton", "Name": "ftHistory", "IconName": "List",     "Active": false, "OnSelect": "Navigate(HistoryScreen, None)" },
+        { "Type": "IconButton", "Name": "ftSettings","IconName": "Settings",  "Active": false, "OnSelect": "Navigate(SettingsScreen, None)" }
+      ]
+    }
+  ]
+}

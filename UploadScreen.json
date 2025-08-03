@@ -86,6 +86,12 @@
           "Tooltip": "Take Photo"
         },
         {
+          "Type": "AddMediaButton",
+          "Name": "addPicture1",
+          "Visible": false,
+          "OnChange": "Set(varPhoto, addPicture1.Media); Set(varFileName, addPicture1.FileName)"
+        },
+        {
           "Type": "Button",
           "Name": "btnChooseFile",
           "Text": "Choose File",
